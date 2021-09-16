@@ -2,12 +2,12 @@ import firebase from "firebase";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAT86CoJ7GdeCJhyoHyNd3Ae2MYi4UeAP8",
-  authDomain: "levister.firebaseapp.com",
-  projectId: "levister",
-  storageBucket: "levister.appspot.com",
-  messagingSenderId: "994515680627",
-  appId: "1:994515680627:web:8dbe8cc577c7b063281906"
+  apiKey: "AIzaSyAykH8L6TMHPmAHMh2Skczt6EWxCuriYvM",
+  authDomain: "levister-4eed2.firebaseapp.com",
+  projectId: "levister-4eed2",
+  storageBucket: "levister-4eed2.appspot.com",
+  messagingSenderId: "8273578718",
+  appId: "1:8273578718:web:f62ae4988fac5068a3904f"
 };
 
 const app = firebase.initializeApp(firebaseConfig);
