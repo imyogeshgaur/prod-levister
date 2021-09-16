@@ -8,9 +8,10 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Alert from "./assets/Alert";
 
 
-
 const App = () => {
   const [mode, setMode] = useState("light");
+  const [alert, setAlert] = useState(null);
+  const screenSize = window.innerWidth;
 
   const ToggleMode = ()=>{
     if(mode==="light"){
@@ -23,11 +24,17 @@ const App = () => {
   }
 
   const showAlert = (message,type)=>{
-      <Alert message={message} type={type} />
+    setAlert({
+      message,
+      type
+    })
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
   }
   return (
     <>
-      <Navbar mode={mode} ToggleMode={ToggleMode}/>
+      <Navbar mode={mode} ToggleMode={ToggleMode} screenSize={screenSize}/>
       <Switch>
         <Route exact path="/">
             <Home mode={mode} />
@@ -39,6 +46,7 @@ const App = () => {
             <Service mode={mode}/>
         </Route>
         <Route exact path="/contact">
+          <Alert alert={alert}/>
           <Contact mode={mode} showAlert={showAlert}/>
         </Route>
         <Redirect to="/" />
